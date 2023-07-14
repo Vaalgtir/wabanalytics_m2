@@ -1,0 +1,34 @@
+.nameTunnel {
+  margin-bottom: 2vh;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+.wrapperInput {
+  display: flex;
+  margin-bottom: 2vh;
+
+  button {
+    margin-left: 1vw;
+  }
+}
+
+.steps {
+  h4 {
+    margin-bottom: 1vh;
+  }
+
+  .urls {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 1vw;
+      margin-left: 2vw;
+    }
+  }
+}
