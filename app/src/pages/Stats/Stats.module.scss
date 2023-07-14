@@ -1,0 +1,81 @@
+.wrapperEditing {
+  display: flex;
+
+  background: linear-gradient(180deg, #fafbfd, hsla(0, 0%, 100%, 0));
+
+  .leftNav {
+    height: 100%;
+    display: flex;
+
+    .draggableItem {
+      padding: 1vh 1vw;
+      margin-top: 1vh;
+
+      cursor: grab;
+
+      border-radius: 0.8rem;
+
+      background-color: rgb(228, 238, 255);
+    }
+  }
+
+  .wrapperBody {
+    display: block;
+    width: 75vw;
+
+    .wrapperButtons {
+      position: absolute;
+      bottom: 85px;
+      right: 2vw;
+      z-index: 2;
+    }
+
+    .layout {
+      height: 94vh !important ;
+      & > div {
+        background-color: #fff;
+        box-shadow: 0 2px 8px 0 rgba(103, 151, 255, 0.09),
+          0 4px 32px 0 rgba(103, 151, 255, 0.09);
+        border-radius: 8px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        & > div {
+          line-height: 2rem;
+        }
+
+        :global(.value) {
+          font-size: 2rem;
+        }
+        :global(.label) {
+          color: rgba(109, 124, 144, 0.5);
+        }
+      }
+
+      .deleteItem {
+        z-index: 852;
+        position: absolute;
+        top: 0;
+        right: 2px;
+        cursor: pointer;
+      }
+    }
+    .layoutEdit {
+      background-color: rgb(228, 228, 228);
+
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, grey 1px, transparent 1px),
+        linear-gradient(to bottom, grey 1px, transparent 1px);
+    }
+  }
+}
+
+.wrapperNotEditing {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,48 @@
+.wrapperHeatmap {
+  display: flex;
+
+  //   background: linear-gradient(180deg, #fafbfd, hsla(0, 0%, 100%, 0));
+
+  .leftNav {
+    height: 100%;
+    display: flex;
+  }
+
+  .wrapperBody {
+    display: flex;
+    width: 75vw;
+    flex-direction: column;
+    align-items: center;
+
+    .wrapperButtons {
+      position: absolute;
+      top: 85px;
+      right: 2vw;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #42526e;
+      margin: 2vh 3vw;
+    }
+
+    .wrapperSizeChoices {
+      display: flex;
+      align-items: center;
+
+      button {
+        margin-left: 1vw;
+      }
+    }
+
+    :global(.heatmap) {
+      width: 992px;
+      height: 600px;
+
+      margin-top: 3vh;
+      iframe {
+      }
+    }
+  }
+}

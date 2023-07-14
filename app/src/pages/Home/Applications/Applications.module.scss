@@ -1,0 +1,29 @@
+.wrapperApp {
+  .wrapperAddApp {
+    width: 100vw;
+    display: flex;
+    justify-content: end;
+
+    button {
+      margin: 3vh 4vw;
+    }
+  }
+
+  .wrapperTable {
+    margin: 3vh 18vw;
+
+    .wrapperActions {
+      button:last-child {
+        margin-left: 1vw;
+      }
+
+      button:first-child {
+        margin-right: 1vw;
+      }
+
+      .editAction {
+        margin-right: 1vw;
+      }
+    }
+  }
+}

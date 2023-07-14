@@ -1,0 +1,30 @@
+.wrapperBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .wrapperTags {
+    margin-left: 4vw;
+  }
+
+  .wrapperFilter {
+    display: flex;
+    align-items: center;
+
+    .wrapperDatePicker {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      > div {
+        margin: 1vh 1vw;
+      }
+    }
+
+    button {
+      &:last-child {
+        margin: 0 1vw;
+      }
+    }
+  }
+}
