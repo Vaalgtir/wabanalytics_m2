@@ -1,0 +1,49 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["linux-arm64-openssl-1.1.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id           Int            @id @default(autoincrement())
+  username     String         @unique(map: "username") @db.VarChar(25)
+  password     String         @db.Text
+  mail         String         @unique(map: "mail") @db.VarChar(25)
+  isAdmin      Boolean        @default(false)
+  isValidated  Boolean        @default(false)
+  nom          String?        @db.VarChar(25)
+  prenom       String?        @db.VarChar(25)
+  applications applications[]
+  dashboard    dashboard[]
+}
+
+model applications {
+  id                String              @id @default(uuid()) @db.Uuid
+  userId            Int
+  users             users               @relation(fields: [userId], references: [id])
+  name              String              @db.VarChar(25)
+  domain            String              @default("") @db.VarChar(25)
+  dashboard         dashboard[]
+  conversion_tunnel conversion_tunnel[]
+}
+
+model dashboard {
+  id            Int          @id @default(autoincrement())
+  userId        Int
+  users         users        @relation(fields: [userId], references: [id])
+  applicationId String       @unique @db.Uuid
+  applications  applications @relation(fields: [applicationId], references: [id])
+  layout        String       @db.Text
+}
+
+model conversion_tunnel {
+  id            String       @id @default(uuid()) @db.Uuid
+  applicationId String       @db.Uuid
+  applications  applications @relation(fields: [applicationId], references: [id])
+  path          Json
+  name          String       @default("Tunnel de conversion") @db.VarChar(25)
+}
